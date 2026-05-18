@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { db, correlations, reflections, scienceIngest } from "@bio-theology/db";
-import { desc, eq } from "drizzle-orm";
+import { desc, eq, count } from "drizzle-orm";
 
 dotenv.config();
 
@@ -137,16 +137,16 @@ app.post("/api/reflections", async (req: Request, res: Response) => {
 app.get("/api/stats", async (req: Request, res: Response) => {
   try {
     const [correlationCount] = await db
-      .select({ count: db.$count(correlations) })
+      .select({ count: count() })
       .from(correlations)
       .where(eq(correlations.verified, true));
 
     const [studyCount] = await db
-      .select({ count: db.$count(scienceIngest) })
+      .select({ count: count() })
       .from(scienceIngest);
 
     const [reflectionCount] = await db
-      .select({ count: db.$count(reflections) })
+      .select({ count: count() })
       .from(reflections);
 
     res.json({
