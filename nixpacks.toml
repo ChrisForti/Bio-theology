@@ -5,4 +5,4 @@ cmds = ["npm install"]
 cmds = ["npm run build --workspace=@bio-theology/api"]
 
 [start]
-cmd = "npm start --workspace=@bio-theology/api"
+cmd = "node apps/api/dist/index.js"
