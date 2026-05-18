@@ -1,0 +1,32 @@
+{
+  "name": "bio-theology-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cross-referencing peer-reviewed health studies with Biblical wisdom",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "hermie": "tsx scripts/hermie-runner.ts",
+    "jimmy": "tsx scripts/jimmy-processor.ts",
+    "api:dev": "npm run dev --workspace=apps/api",
+    "web:dev": "npm run dev --workspace=apps/web"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.11.0"
+  },
+  "packageManager": "npm@10.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

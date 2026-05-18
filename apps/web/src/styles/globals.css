@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: system-ui, -apple-system, sans-serif;
+    --font-crimson: Georgia, serif;
+    --font-jetbrains: "Courier New", monospace;
+  }
+
+  body {
+    @apply bg-zinc-950 text-zinc-50;
+  }
+}
+
+@layer components {
+  .correlation-card {
+    @apply flex flex-col justify-between rounded-xl border border-zinc-800 bg-zinc-900/50 p-6 backdrop-blur-sm transition-all hover:border-amber-500/30;
+  }
+
+  .category-badge {
+    @apply text-xs font-mono tracking-wider text-zinc-400;
+  }
+
+  .scripture-text {
+    @apply text-sm italic text-zinc-300 bg-zinc-900 p-3 rounded border-l-2 border-amber-500/50;
+  }
+
+  .mechanism-badge {
+    @apply flex items-center gap-2 text-sm font-mono text-emerald-400;
+  }
+
+  .social-hook-container {
+    @apply mt-6 border-t border-zinc-800 pt-4;
+  }
+}
