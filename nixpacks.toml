@@ -1,8 +1,11 @@
+[phases.setup]
+nixPkgs = ["nodejs"]
+
 [phases.install]
-cmds = ["npm install"]
+cmds = ["cd apps/api && npm install"]
 
 [phases.build]
-cmds = ["npm run build --workspace=@bio-theology/api"]
+cmds = ["cd apps/api && npm run build"]
 
 [start]
 cmd = "node apps/api/dist/index.js"
