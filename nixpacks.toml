@@ -1,7 +1,9 @@
+[phases.setup]
+
 [phases.install]
 cmds = ["npm install"]
 
-[phases.build]  
+[phases.build]
 cmds = ["npm run build --workspace=@bio-theology/api"]
 
 [start]
